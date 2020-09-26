@@ -8,7 +8,7 @@
       styleUrls: ['./category.component.css']  
     })  
     export class CategoryComponent {  
-      title = 'CategoryFrontEnd';  
+      title = 'CategoryComponent';  
          
       constructor(private CategoryService: CategoryService) { }  
       data: any;  

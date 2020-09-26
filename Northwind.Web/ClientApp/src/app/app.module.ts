@@ -12,8 +12,8 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ApiAuthorizationModule } from 'src/api-authorization/api-authorization.module';
 import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
-//import {CategoryService} from 'src/services/CategoryService';  
-import { CategoryComponent } from './category/category.component';
+import {CategoryService} from 'src/services/CategoryService';  
+//import { CategoryComponent } from './category/category.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +38,10 @@ import { CategoryComponent } from './category/category.component';
   //providers: [
   //  { provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true }, CategoryService
   //],
+  providers: [
+    CategoryService
+  ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
