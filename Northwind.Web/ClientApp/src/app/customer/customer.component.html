@@ -1,0 +1,160 @@
+<div class="container">  
+    <!-- customers formular -->
+    <form [formGroup]="CstForm" (ngSubmit)="this[EventValue]()">  
+        
+        <h3>Customers CRUD Operation</h3>  
+        <div class="row">  
+             
+        <table class="table">  
+        <tr>  
+          <td>CompanyName</td>  
+          <td>  
+            <input type="hidden" formControlName="CustomerID">  
+            <input type="text" formControlName="CompanyName">  
+            <div *ngIf="submitted && CstForm.controls.CompanyName.errors" class="text-danger">  
+              <div *ngIf="CstForm.controls.CompanyName.errors.required">Customer Name is required</div>  
+            </div>   
+          </td>  
+        </tr>  
+          
+        <tr>  
+          <td>ContactName</td>  
+          <td><input type="text" formControlName="ContactName">  
+            <div *ngIf="submitted && CstForm.controls.ContactName.errors" class="text-danger">  
+              <div *ngIf="CstForm.controls.ContactName.errors.required">Contact is required</div>  
+            </div>   
+          </td>  
+        </tr>  
+
+        <tr>  
+          <td>ContactTitle</td>  
+          <td>  
+            <input type="text" formControlName="ContactTitle">  
+            <div *ngIf="submitted && CstForm.controls.ContactTitle.errors" class="text-danger">  
+              <div *ngIf="CstForm.controls.ContactTitle.errors.required">ContactTitle is required</div>  
+            </div>  
+          </td>  
+        </tr> 
+        
+        <tr>  
+          <td>Address</td>  
+          <td>  
+            <input type="text" formControlName="Address">  
+            <div *ngIf="submitted && CstForm.controls.Address.errors" class="text-danger">  
+              <div *ngIf="CstForm.controls.Address.errors.required">Address is required</div>  
+            </div>  
+          </td>  
+        </tr> 
+
+        <tr>  
+            <td>City</td>  
+            <td>  
+              <input type="text" formControlName="City">  
+              <div *ngIf="submitted && CstForm.controls.City.errors" class="text-danger">  
+                <div *ngIf="CstForm.controls.City.errors.required">City is required</div>  
+              </div>  
+            </td>  
+          </tr> 
+
+          <tr>  
+            <td>Region</td>  
+            <td>  
+              <input type="text" formControlName="Region">  
+              <div *ngIf="submitted && CstForm.controls.Region.errors" class="text-danger">  
+                <div *ngIf="CstForm.controls.Region.errors.required">Region is required</div>  
+              </div>  
+            </td>  
+          </tr> 
+ 
+          <tr>  
+            <td>PostalCode</td>  
+            <td>  
+              <input type="text" formControlName="PostalCode">  
+              <div *ngIf="submitted && CstForm.controls.PostalCode.errors" class="text-danger">  
+                <div *ngIf="CstForm.controls.PostalCode.errors.required">PostalCode is required</div>  
+              </div>  
+            </td>  
+          </tr> 
+
+          <tr>  
+            <td>Country</td>  
+            <td>  
+              <input type="text" formControlName="Country">  
+              <div *ngIf="submitted && CstForm.controls.Country.errors" class="text-danger">  
+                <div *ngIf="CstForm.controls.Country.errors.required">Country is required</div>  
+              </div>  
+            </td>  
+          </tr> 
+
+          <tr>  
+            <td>Phone</td>  
+            <td>  
+              <input type="text" formControlName="Phone">  
+              <div *ngIf="submitted && CstForm.controls.Phone.errors" class="text-danger">  
+                <div *ngIf="CstForm.controls.Phone.errors.required">Phone is required</div>  
+              </div>  
+            </td>  
+          </tr> 
+          
+          <tr>  
+            <td>Fax</td>  
+            <td>  
+              <input type="text" formControlName="Fax">  
+              <div *ngIf="submitted && CstForm.controls.Fax.errors" class="text-danger">  
+                <div *ngIf="CstForm.controls.Fax.errors.required">Fax is required</div>  
+              </div>  
+            </td>  
+          </tr> 
+
+        <tr>  
+      
+          <td colspan="2">  
+            <button type="submit" class="btn btn-primary">{{EventValue}}</button>  
+          </td>  
+        </tr>  
+          
+      </table>  
+      </div>  
+         
+     <div class="row">  
+      <table class="table table-striped">  
+        <tr>  
+          <td>CustomerId</td>  
+          <td>CompanyName</td>             
+          <td>ContactName</td>  
+          <td>ContactTitle</td> 
+          <td>Address</td> 
+          <td>City</td> 
+          <td>Region</td> 
+          <td>PostalCode</td> 
+          <td>Country</td> 
+          <td>Phone</td> 
+          <td>Fax</td> 
+          <td>Edit</td>  
+          <td>Delete</td>  
+        </tr>  
+      
+        <tr *ngFor="let d of data"> 
+          <td>{{d.CustomerId}}</td>  
+          <td>{{d.CompanyName}}</td>             
+          <td>{{d.ContactName}}</td>  
+          <td>{{d.ContactTitle}}</td> 
+          <td>{{d.Address}}</td> 
+          <td>{{d.City}}</td> 
+          <td>{{d.Region}}</td> 
+          <td>{{d.PostalCode}}</td> 
+          <td>{{d.Country}}</td> 
+          <td>{{d.Phone}}</td> 
+          <td>{{d.Fax}}</td> 
+          <td>Edit</td>  
+          <td>Delete</td> 
+
+
+          <td><a (click)="EditData(d)" class="btn btn-warning">Edit</a></td>  
+          <td><a (click)="deleteData(d.CustomerID)" class="btn btn-danger">Delete</a></td>    
+        </tr>  
+      </table>  
+    </div>  
+    </form>  
+      
+    </div>
