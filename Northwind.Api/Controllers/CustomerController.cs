@@ -30,7 +30,7 @@ namespace Northwind.Api.Controllers
         {
             var data = _context.Customers.Add(obj);
             _context.SaveChanges();
-            return Ok();
+            return Ok(data);
         }
 
         [HttpPut("{id}")]
@@ -38,7 +38,7 @@ namespace Northwind.Api.Controllers
         {
             var data = _context.Customers.Update(obj);
             _context.SaveChanges();
-            return Ok();
+            return Ok(data);
         }
 
 

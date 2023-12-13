@@ -1,0 +1,72 @@
+<div class="container">  
+    
+    <form [formGroup]="ProdForm" (ngSubmit)="this[EventValue]()">  
+        
+        <h3>Products</h3>  
+        <div class="row">  
+             
+        <table class="table">  
+        <tr>  
+          <td>Name</td>  
+          <td>  
+            <input type="hidden" formControlName="CategoryID">  
+            <input type="text" formControlName="CategoryName">  
+            <div *ngIf="submitted && CatForm.controls.CategoryName.errors" class="text-danger">  
+              <div *ngIf="CatForm.controls.CategoryName.errors.required">Name is required</div>  
+            </div>   
+          </td>  
+        </tr>  
+          
+        <tr>  
+          <td>Contact</td>  
+          <td><input type="text" formControlName="Description">  
+            <div *ngIf="submitted && CatForm.controls.Description.errors" class="text-danger">  
+              <div *ngIf="CatForm.controls.Description.errors.required">Contact is required</div>  
+            </div>   
+          </td>  
+        </tr>  
+        <tr>  
+          <td>Email</td>  
+          <td>  
+            <input type="text" formControlName="Picture">  
+            <div *ngIf="submitted && CatForm.controls.Picture.errors" class="text-danger">  
+              <div *ngIf="CatForm.controls.Picture.errors.required">Email is required</div>  
+            </div>  
+          </td>  
+        </tr>  
+        <tr>  
+      
+          <td colspan="2">  
+            <button type="submit" class="btn btn-primary">{{EventValue}}</button>  
+          </td>  
+        </tr>  
+          
+      </table>  
+      </div>  
+         
+     <div class="row">  
+      <table class="table table-striped">  
+        <tr>  
+          <td>Id</td>  
+          <td>Name</td>  
+            
+          <td>Supplier</td>  
+          <td>Category</td> 
+          <td>Edit</td>  
+          <td>Delete</td>  
+        </tr>  
+      
+        <tr *ngFor="let d of data">  
+          <td>{{d.CategoryID}}</td>  
+          <td>{{d.CategoryName}}</td>  
+           
+          <td>{{d.Description}}</td>  
+          <td>{{d.Picture}}</td>  
+          <td><a (click)="EditData(d)" class="btn btn-warning">Edit</a></td>  
+          <td><a (click)="deleteData(d.CategoryID)" class="btn btn-danger">Delete</a></td>    
+        </tr>  
+      </table>  
+    </div>  
+    </form>  
+      
+    </div>
