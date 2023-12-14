@@ -9,6 +9,7 @@ using Northwind.Api.Models;
 namespace Northwind.Api.Controllers
 {
     [Route("api/Supplier")]
+    [ApiVersion("2.0")]
     [ApiController]
     public class SupplierController : ControllerBase
     {
