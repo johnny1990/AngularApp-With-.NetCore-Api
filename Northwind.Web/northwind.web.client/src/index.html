@@ -1,4 +1,4 @@
-<!--<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -9,15 +9,9 @@
 </head>
 <body>
   <app-root></app-root>
-</body>
-</html>-->
-
-
-
-<header>
   <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
     <div class="container">
-      <a class="navbar-brand" [routerLink]="['/']">Northwind.Web</a>
+      <!--<a class="navbar-brand" [routerLink]="['/']">Northwind.Web</a>-->
       <button class="navbar-toggler"
               type="button"
               data-toggle="collapse"
@@ -45,6 +39,9 @@
           <li class="nav-item" [routerLinkActive]="['link-active']">
             <a class="nav-link text-dark" [routerLink]="['/category']">Category</a>
           </li>
+          <li routerLinkActive="active">
+            <a [routerLink]="['/category']">Category</a>
+          </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
             <a class="nav-link text-dark" [routerLink]="['/customer']">Customers</a>
           </li>
@@ -52,4 +49,5 @@
       </div>
     </div>
   </nav>
-</header>
+</body>
+</html>
