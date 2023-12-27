@@ -1,6 +1,5 @@
-
     import { Component } from '@angular/core';  
-    import { CustomerService } from 'src/services/CustomerService';  
+    import { CustomerService } from '../services/CustomerService';
     import { FormGroup, FormControl,Validators } from '@angular/forms';   
     @Component({  
       selector: 'app-customer-component',  
@@ -12,7 +11,7 @@
          
       constructor(private CustomerService: CustomerService) { }  
       data: any;  
-      CstForm: FormGroup;  
+      CstForm!: FormGroup;  
       submitted = false;   
       EventValue: any = "Save";  
       
@@ -24,23 +23,19 @@
         CompanyName: new FormControl("",[Validators.required]),        
         ContactName: new FormControl("",[Validators.required]),  
         ContactTitle:new FormControl("",[Validators.required]),
-          Address:new FormControl("",[Validators.required]),
-        ContactTitle:new FormControl("",[Validators.required]),
-        ContactTitle:new FormControl("",[Validators.required]),
-        ContactTitle:new FormControl("",[Validators.required]),
-        ContactTitle:new FormControl("",[Validators.required]),
-        ContactTitle:new FormControl("",[Validators.required]),
-        ContactTitle:new FormControl("",[Validators.required]),
+        Address: new FormControl("", [Validators.required]),
+
+
   
         })    
       }  
       getdata() {  
-        this.CustomerService.getData().subscribe((data: any[]) => {  
+        this.CustomerService.getData().subscribe((data) => {  
           this.data = data;  
         })  
       }  
-      deleteData(id) {  
-        this.CustomerService.deleteData(id).subscribe((data: any[]) => {  
+      deleteData(id : any) {  
+        this.CustomerService.deleteData(id).subscribe((data) => {  
           this.data = data;  
           this.getdata();  
         })  
@@ -51,7 +46,7 @@
          if (this.CstForm.invalid) {  
                 return;  
          }  
-        this.CustomerService.postData(this.CstForm.value).subscribe((data: any[]) => {  
+        this.CustomerService.postData(this.CstForm.value).subscribe((data) => {  
           this.data = data;  
           this.resetFrom();  
       
@@ -63,13 +58,13 @@
         if (this.CstForm.invalid) {  
          return;  
         }        
-        this.CustomerService.putData(this.CstForm.value.CustomerID,this.CstForm.value).subscribe((data: any[]) => {  
+        this.CustomerService.putData(this.CstForm.value.CustomerID,this.CstForm.value).subscribe((data) => {  
           this.data = data;  
           this.resetFrom();  
         })  
       }  
       
-      EditData(Data) {  
+      EditData(Data: any) {  
         this.CstForm.controls["CustomerID"].setValue(Data.CustomerID);  
         this.CstForm.controls["CompanyName"].setValue(Data.CompanyName);      
         this.CstForm.controls["ContactName"].setValue(Data.ContactName);  

@@ -8,6 +8,7 @@
     <PublishAssetsDirectory>$(MSBuildProjectDirectory)\dist\northwind.web.client\</PublishAssetsDirectory>
   </PropertyGroup>
   <ItemGroup>
+    <Folder Include="src\app\supplier\" />
     <Folder Include="src\app\product\" />
   </ItemGroup>
   <ItemGroup>
