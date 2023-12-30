@@ -24,10 +24,13 @@
         ContactName: new FormControl("",[Validators.required]),  
         ContactTitle:new FormControl("",[Validators.required]),
         Address: new FormControl("", [Validators.required]),
-
-
-  
-        })    
+        City: new FormControl("", [Validators.required]),
+        Region: new FormControl("", [Validators.required]),
+        PostalCode: new FormControl("", [Validators.required]),
+        Country: new FormControl("", [Validators.required]),
+        Phone: new FormControl("", [Validators.required]),
+        Fax: new FormControl("", [Validators.required]),
+        });    
       }  
       getdata() {  
         this.CustomerService.getData().subscribe((data) => {  

@@ -1,67 +1,41 @@
-//import { HttpClientModule } from '@angular/common/http';
-//import { NgModule } from '@angular/core';
-//import { BrowserModule } from '@angular/platform-browser';
-
-//import { AppRoutingModule } from './app-routing.module';
-//import { AppComponent } from './app.component';
-
-//@NgModule({
-//  declarations: [
-//    AppComponent
-//  ],
-//  imports: [
-//    BrowserModule, HttpClientModule,
-//    AppRoutingModule
-//  ],
-//  providers: [],
-//  bootstrap: [AppComponent]
-//})
-//export class AppModule { }
-
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-
 import { AppComponent } from './app.component';
 //import { NavMenuComponent } from './nav-menu/nav-menu.component';
-//import { HomeComponent } from './home/home.component';
-//import { CounterComponent } from './counter/counter.component';
-//import { FetchDataComponent } from './fetch-data/fetch-data.component';
-//import { ApiAuthorizationModule } from 'src/api-authorization/api-authorization.module';
-//import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
-//import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
-//import { CategoryService } from 'src/services/CategoryService';
-/*//import {CategoryService } from './services/CategoryService';*/
-//import { CategoryComponent } from './category/category.component';
+import { HomeComponent } from './home/home.component';
+import { CounterComponent } from './counter/counter.component';
+import { FetchDataComponent } from './fetch-data/fetch-data.component';
+
+import { CategoryComponent } from './category/category.component';
+import { ProductComponent } from './product/product.component';
+import { CustomerComponent } from './customer/customer.component';
+import { SupplierComponent } from './supplier/supplier.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    //NavMenuComponent,
-    //HomeComponent,
-    //CounterComponent,
-    //FetchDataComponent
+    HomeComponent,
+    CounterComponent,
+    FetchDataComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
-/*    ApiAuthorizationModule,*/
     RouterModule.forRoot([
-      //{ path: '', component: HomeComponent, pathMatch: 'full' },
-      //{ path: 'counter', component: CounterComponent },
-      //{ path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
-    //  { path: 'category', component: CategoryComponent},
+      { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: 'counter', component: CounterComponent },
+      { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'category', component: CategoryComponent },
+      { path: 'product', component: ProductComponent },
+      { path: 'customer', component: CustomerComponent },
+      { path: 'supplier', component: SupplierComponent }
     ])
   ],
-  //providers: [
-  //  { provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true }, CategoryService
-  //],
-  //providers: [
-  //  CategoryService
-  //],
+
 
   bootstrap: [AppComponent]
 })
